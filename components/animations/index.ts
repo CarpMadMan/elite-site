@@ -36,3 +36,21 @@ export type { CounterAnimationProps, CounterSpringProps } from './CounterAnimati
 // Comparison animations
 export { BeforeAfterAnimation } from './BeforeAfterAnimation';
 export type { BeforeAfterAnimationProps } from './BeforeAfterAnimation';
+
+// Scrolling ribbon system
+export { default as ScrollingRibbon } from './ScrollingRibbon';
+export type { ScrollingRibbonProps } from './ScrollingRibbon';
+
+export { default as EmojiWithBadge } from './EmojiWithBadge';
+export type { EmojiWithBadgeProps } from './EmojiWithBadge';
+
+export { default as TranscribingEffect } from './TranscribingEffect';
+export type { TranscribingEffectProps } from './TranscribingEffect';
+
+export { default as RotatingTextBanner } from './RotatingTextBanner';
+
+export { LogoCarousel } from './LogoCarousel';
+export type { LogoCarouselProps } from './LogoCarousel';
+
+// Hooks
+export { useEmojiPositionTracker } from './useEmojiPositionTracker';

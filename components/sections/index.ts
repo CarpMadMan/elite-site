@@ -7,3 +7,7 @@ export { SolutionSection } from "./SolutionSection";
 export { PlatformSection } from "./PlatformSection";
 export { AskAISection } from "./AskAISection";
 export { FinalCTASection } from "./FinalCTASection";
+
+// Logo carousel sections
+export { TrustedBySection } from "./TrustedBySection";
+export { PartnerSection } from "./PartnerSection";

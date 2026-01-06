@@ -37,13 +37,13 @@ export function BeforeAfterAnimation({
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 1.05 }}
             transition={{ duration: 0.3 }}
-            className="rounded-xl border-2 border-neutral-200 bg-neutral-50 p-8"
+            className="rounded-xl border-2 border-[#333333] bg-[#1a1a1a] p-8"
           >
             <div className="flex items-start gap-4">
               <div className="text-2xl">❌</div>
               <div>
-                <h3 className="text-lg font-semibold text-neutral-700">{beforeLabel}</h3>
-                <p className="mt-2 text-neutral-600 whitespace-pre-line">{beforeText}</p>
+                <h3 className="text-lg font-semibold text-[#a0a0a0]">{beforeLabel}</h3>
+                <p className="mt-2 text-white whitespace-pre-line">{beforeText}</p>
               </div>
             </div>
           </motion.div>
@@ -54,13 +54,13 @@ export function BeforeAfterAnimation({
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 1.05 }}
             transition={{ duration: 0.3 }}
-            className="rounded-xl border-2 border-neutral-900 bg-neutral-900 p-8"
+            className="rounded-xl border-2 border-[#2A9D8F] bg-[#2A9D8F] p-8 shadow-[0_0_40px_-10px_rgba(42,157,143,0.3)]"
           >
             <div className="flex items-start gap-4">
-              <div className="text-2xl">✓</div>
+              <div className="text-2xl text-white">✓</div>
               <div>
                 <h3 className="text-lg font-semibold text-white">{afterLabel}</h3>
-                <p className="mt-2 text-neutral-300 whitespace-pre-line">{afterText}</p>
+                <p className="mt-2 text-white whitespace-pre-line">{afterText}</p>
               </div>
             </div>
           </motion.div>
