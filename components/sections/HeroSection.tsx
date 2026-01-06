@@ -46,7 +46,7 @@ function PlatformIcons() {
 
 export function HeroSection() {
   return (
-    <section className="relative bg-white pt-32 pb-24 px-4">
+    <section className="relative bg-[#0a0a0a] pt-32 pb-24 px-4">
       <div className="container">
         <div className="mx-auto max-w-4xl text-center">
           {/* Promo badge */}
@@ -58,7 +58,7 @@ export function HeroSection() {
 
           {/* Main headline - SOLID BLACK, NO GRADIENT */}
           <FadeIn delay={0.1} direction="up">
-            <h1 className="text-[48px] md:text-[56px] lg:text-[64px] font-bold tracking-tight text-[#0a0a0a] leading-[1.1]">
+            <h1 className="text-[48px] md:text-[56px] lg:text-[64px] font-bold tracking-tight text-white leading-[1.1]">
               Your Skills Are Real.
               <br />
               Make Them Undeniable.
@@ -67,7 +67,7 @@ export function HeroSection() {
 
           {/* Subhead - GRAY TEXT */}
           <FadeIn delay={0.2} direction="up">
-            <p className="mt-6 text-[18px] md:text-[20px] text-[#737373] max-w-2xl mx-auto leading-[1.6]">
+            <p className="mt-6 text-[18px] md:text-[20px] text-[#a0a0a0] max-w-2xl mx-auto leading-[1.6]">
               The credential verification platform that turns your real work
               into undeniable proof of expertise.
             </p>
@@ -85,7 +85,7 @@ export function HeroSection() {
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button
                 size="lg"
-                className="bg-[#0a0a0a] hover:bg-[#1a1a1a] text-white rounded-lg"
+                className="bg-[#2A9D8F] hover:bg-[#238B7D] text-white rounded-lg"
               >
                 <Link href="#get-started" className="flex items-center">
                   Get Started Free
@@ -95,7 +95,7 @@ export function HeroSection() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-[#e5e5e5] hover:bg-[#f4f4f5] text-[#0a0a0a] rounded-lg"
+                className="border-[#2A9D8F]/50 hover:bg-[#2A9D8F]/10 text-white rounded-lg"
               >
                 <Link href="#demo" className="flex items-center">
                   Watch Demo

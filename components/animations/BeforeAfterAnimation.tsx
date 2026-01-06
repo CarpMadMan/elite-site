@@ -37,13 +37,13 @@ export function BeforeAfterAnimation({
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 1.05 }}
             transition={{ duration: 0.3 }}
-            className="rounded-xl border-2 border-[#e5e5e5] bg-[#fafafa] p-8"
+            className="rounded-xl border-2 border-[#333333] bg-[#1a1a1a] p-8"
           >
             <div className="flex items-start gap-4">
               <div className="text-2xl">❌</div>
               <div>
-                <h3 className="text-lg font-semibold text-[#737373]">{beforeLabel}</h3>
-                <p className="mt-2 text-[#0a0a0a] whitespace-pre-line">{beforeText}</p>
+                <h3 className="text-lg font-semibold text-[#a0a0a0]">{beforeLabel}</h3>
+                <p className="mt-2 text-white whitespace-pre-line">{beforeText}</p>
               </div>
             </div>
           </motion.div>
@@ -54,7 +54,7 @@ export function BeforeAfterAnimation({
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 1.05 }}
             transition={{ duration: 0.3 }}
-            className="rounded-xl border-2 border-[#008080] bg-[#008080] p-8"
+            className="rounded-xl border-2 border-[#2A9D8F] bg-[#2A9D8F] p-8 shadow-[0_0_40px_-10px_rgba(42,157,143,0.3)]"
           >
             <div className="flex items-start gap-4">
               <div className="text-2xl text-white">✓</div>
