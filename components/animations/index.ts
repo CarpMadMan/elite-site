@@ -32,3 +32,7 @@ export type { ParallaxImageProps, ParallaxWrapperProps } from './ParallaxImage';
 // Number animations
 export { CounterAnimation, CounterSpring } from './CounterAnimation';
 export type { CounterAnimationProps, CounterSpringProps } from './CounterAnimation';
+
+// Comparison animations
+export { BeforeAfterAnimation } from './BeforeAfterAnimation';
+export type { BeforeAfterAnimationProps } from './BeforeAfterAnimation';
