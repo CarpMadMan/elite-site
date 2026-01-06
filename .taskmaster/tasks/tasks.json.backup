@@ -1,0 +1,100 @@
+{
+  "tasks": [
+    {
+      "title": "Initialize Next.js project with App Router",
+      "description": "Create new Next.js 15 project with App Router, TypeScript, and Tailwind CSS",
+      "status": "done",
+      "assignee": "foundation"
+    },
+    {
+      "title": "Install and configure shadcn/ui",
+      "description": "Install shadcn/ui CLI, initialize components.json, add base components",
+      "status": "done",
+      "assignee": "foundation"
+    },
+    {
+      "title": "Install animation dependencies",
+      "description": "Install Framer Motion, Lucide icons, and configure",
+      "status": "done",
+      "assignee": "foundation"
+    },
+    {
+      "title": "Set up folder structure",
+      "description": "Create app, components, lib, public folders with proper structure",
+      "status": "done",
+      "assignee": "foundation"
+    },
+    {
+      "title": "Create Navbar component",
+      "description": "Responsive navbar with logo, nav links, mobile menu, dropdowns",
+      "status": "done",
+      "assignee": "layout"
+    },
+    {
+      "title": "Create Footer component",
+      "description": "Three-column footer with links and branding",
+      "status": "done",
+      "assignee": "layout"
+    },
+    {
+      "title": "Build HeroSection",
+      "description": "Hero with headline, subhead, CTAs, and animated headline",
+      "status": "pending",
+      "assignee": "hero-problem"
+    },
+    {
+      "title": "Build ProblemSection",
+      "description": "Stats grid with counter animations (73%, 6 months, 0%)",
+      "status": "pending",
+      "assignee": "hero-problem"
+    },
+    {
+      "title": "Build CredentialGapSection",
+      "description": "Cards showing what's broken with icons",
+      "status": "pending",
+      "assignee": "hero-problem"
+    },
+    {
+      "title": "Build SolutionSection",
+      "description": "How ELITE works - tool tracking flow",
+      "status": "pending",
+      "assignee": "solution"
+    },
+    {
+      "title": "Build FlowDiagramSection",
+      "description": "Install → Track → Unlock visual with animated steps",
+      "status": "pending",
+      "assignee": "solution"
+    },
+    {
+      "title": "Build PricingSection",
+      "description": "Three pricing cards (Free, Pro, Enterprise)",
+      "status": "pending",
+      "assignee": "pricing"
+    },
+    {
+      "title": "Build GroupsSection",
+      "description": "Subscription groups feature and earning potential",
+      "status": "pending",
+      "assignee": "pricing"
+    },
+    {
+      "title": "Build FinalCTASection",
+      "description": "Final call-to-action section",
+      "status": "pending",
+      "assignee": "pricing"
+    },
+    {
+      "title": "Create base animation components",
+      "description": "FadeIn, SlideIn, ScaleIn, StaggerContainer, ParallaxImage, CounterAnimation",
+      "status": "done",
+      "assignee": "animations"
+    },
+    {
+      "title": "Create content data files",
+      "description": "hero.ts, problem.ts, pricing.ts, features.ts, navigation.ts",
+      "status": "pending",
+      "assignee": "content"
+    }
+  ]
+}
