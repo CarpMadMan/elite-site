@@ -63,15 +63,28 @@ const ScrollingRibbon: React.FC<ScrollingRibbonProps> = ({
 
   return (
     <div className="relative w-full overflow-hidden">
-      {/* Glass Verification Zone */}
+      {/* Enhanced Glass Verification Zone with Wispr Flow styling */}
       {glassZone && (
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[120px] z-10 pointer-events-none">
-          <div className="w-full h-full bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-[2px] border-2 border-[#2A9D8F]/30 rounded-lg shadow-[0_0_30px_-5px_rgba(42,157,143,0.2)]">
-            {/* Verification indicator */}
-            <div className="absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap">
-              <span className="text-[#2A9D8F] text-sm font-semibold tracking-wide drop-shadow-lg">
-                VERIFICATION ZONE
-              </span>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[240px] h-[140px] z-10 pointer-events-none">
+          {/* Outer glow effect */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#2A9D8F]/20 to-transparent blur-xl" />
+
+          {/* Main glass panel */}
+          <div className="relative w-full h-full bg-gradient-to-br from-white/15 via-white/10 to-white/5 backdrop-blur-md border border-white/20 rounded-2xl shadow-[0_8px_32px_-8px_rgba(42,157,143,0.3),inset_0_1px_0_0_rgba(255,255,255,0.1)]">
+            {/* Inner highlight */}
+            <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent rounded-2xl" />
+
+            {/* Accent border */}
+            <div className="absolute inset-0 border-2 border-[#2A9D8F]/40 rounded-2xl" />
+
+            {/* Bottom glow */}
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-1 bg-gradient-to-r from-transparent via-[#2A9D8F]/60 to-transparent blur-sm" />
+          </div>
+
+          {/* Verification indicator - more prominent */}
+          <div className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap">
+            <div className="bg-[#2A9D8F]/90 backdrop-blur-sm text-white px-4 py-1.5 rounded-full text-sm font-bold tracking-wider shadow-[0_4px_20px_-4px_rgba(42,157,143,0.5)] border border-white/20">
+              ✨ VERIFICATION ZONE
             </div>
           </div>
         </div>
