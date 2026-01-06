@@ -3,7 +3,7 @@
 import { ArrowRight, Play } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { FadeIn } from '@/components/animations'
+import { FadeIn, ScrollingRibbon, RotatingTextBanner } from '@/components/animations'
 import { Button } from '@/components/ui/button'
 import { BeforeAfterAnimation } from '@/components/animations'
 
@@ -45,20 +45,28 @@ function PlatformIcons() {
 }
 
 export function HeroSection() {
+  const peopleEmojis = [
+    '👨‍💼','👩‍💻','👨‍🎨','👩‍🔬','👨‍🚀','👩‍⚖️','👨‍🏫','👩‍🌾','👨‍💼','👩‍🎤',
+    '👨‍🔧','👩‍⚕️','👨‍🎓','👩‍💼','👨‍🍳','👩‍🎨','👨‍🔬','👩‍🚀','👨‍⚖️','👩‍🏫',
+    '👨‍🌾','👩‍💻','👨‍🎤','👩‍🔧','👨‍⚕️','👩‍🎓','👨‍💼','👩‍🍳','👨‍🎨','👩‍🔬'
+  ]
+
   return (
-    <section className="relative overflow-hidden pt-32 pb-24 px-4">
+    <section className="relative bg-[#0a0a0a] pt-32 pb-24 px-4">
       <div className="container">
         <div className="mx-auto max-w-4xl text-center">
           {/* Promo badge */}
           <FadeIn delay={0} direction="up">
             <div className="mb-6">
-              <PromoBadge />
+              <div className="inline-flex bg-[#0a0a0a] text-white px-4 py-1.5 rounded-full text-sm font-semibold border border-white/10">
+                Free Forever
+              </div>
             </div>
           </FadeIn>
 
           {/* Main headline */}
           <FadeIn delay={0.1} direction="up">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-neutral-900 leading-[1.1]">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
               Your Skills Are Real.
               <br />
               Make Them Undeniable.
@@ -67,7 +75,7 @@ export function HeroSection() {
 
           {/* Subhead */}
           <FadeIn delay={0.2} direction="up">
-            <p className="mt-6 text-xl text-neutral-500 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-6 text-xl text-[#a0a0a0] max-w-2xl mx-auto leading-relaxed">
               The credential verification platform that turns your real work
               into undeniable proof of expertise.
             </p>
@@ -83,13 +91,13 @@ export function HeroSection() {
           {/* CTAs */}
           <FadeIn delay={0.4} direction="up">
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button size="lg" className="bg-neutral-900 hover:bg-neutral-800 text-white">
+              <Button size="lg" className="bg-[#2A9D8F] hover:bg-[#238B7D] text-white border-0">
                 <Link href="#get-started">
                   Get Started Free
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-neutral-300 hover:bg-neutral-100">
+              <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 hover:border-white/30">
                 <Link href="#demo">
                   Watch Demo
                   <Play className="ml-2 h-5 w-5" />
@@ -98,8 +106,28 @@ export function HeroSection() {
             </div>
           </FadeIn>
 
-          {/* Before/After Animation */}
+          {/* NEW: Scrolling Ribbon */}
           <FadeIn delay={0.5} direction="up">
+            <div className="mt-12">
+              <ScrollingRibbon
+                items={peopleEmojis}
+                speed={30}
+                direction="ltr"
+                glassZone={true}
+                gap="60px"
+              />
+            </div>
+          </FadeIn>
+
+          {/* NEW: Rotating Text Banner */}
+          <FadeIn delay={0.6} direction="up">
+            <div className="mt-6">
+              <RotatingTextBanner />
+            </div>
+          </FadeIn>
+
+          {/* Before/After Animation */}
+          <FadeIn delay={0.7} direction="up">
             <div className="mt-16">
               <BeforeAfterAnimation
                 beforeLabel="Resume Claims"
