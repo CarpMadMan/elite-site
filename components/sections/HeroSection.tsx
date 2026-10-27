@@ -52,17 +52,17 @@ export function HeroSection() {
   ]
 
   return (
-    <section className="relative bg-[#0a0a0a] pt-20 pb-32 px-4 overflow-hidden">
+    <section className="relative bg-amber-50/50 pt-32 pb-32 px-4 overflow-hidden">
       {/* Ambient background effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-[#0f0f0f] to-[#0a0a0a] pointer-events-none" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#2A9D8F]/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-amber-50 via-orange-50/30 to-amber-50 pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-amber-200/20 rounded-full blur-[120px] pointer-events-none" />
       
       <div className="container relative z-10">
         <div className="mx-auto max-w-5xl text-center">
           {/* Promo badge - smaller, more subtle */}
           <FadeIn delay={0} direction="up">
             <div className="mb-8">
-              <div className="inline-flex bg-white/5 backdrop-blur-sm text-white/90 px-4 py-1.5 rounded-full text-sm font-semibold border border-white/10 shadow-lg">
+              <div className="inline-flex bg-neutral-900/5 backdrop-blur-sm text-neutral-900 px-4 py-1.5 rounded-full text-sm font-semibold border border-neutral-900/10 shadow-lg">
                 ✨ Free Forever
               </div>
             </div>
@@ -70,10 +70,10 @@ export function HeroSection() {
 
           {/* Main headline - tighter spacing, larger */}
           <FadeIn delay={0.1} direction="up">
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[1.05] mb-6">
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-neutral-900 leading-[1.05] mb-6">
               Your Skills Are Real.
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-white/70">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-700">
                 Make Them Undeniable.
               </span>
             </h1>
@@ -81,7 +81,7 @@ export function HeroSection() {
 
           {/* Subhead - more prominent */}
           <FadeIn delay={0.2} direction="up">
-            <p className="text-xl md:text-2xl text-white/60 max-w-3xl mx-auto leading-relaxed mb-10">
+            <p className="text-xl md:text-2xl text-neutral-600 max-w-3xl mx-auto leading-relaxed mb-10">
               The credential verification platform that turns your real work
               into undeniable proof of expertise.
             </p>
@@ -97,19 +97,19 @@ export function HeroSection() {
           {/* CTAs - more prominent styling */}
           <FadeIn delay={0.4} direction="up">
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row mb-16">
-              <Button 
-                size="lg" 
-                className="bg-[#2A9D8F] hover:bg-[#238B7D] text-white border-0 shadow-[0_0_40px_-10px_rgba(42,157,143,0.4)] hover:shadow-[0_0_50px_-10px_rgba(42,157,143,0.5)] transition-all duration-300 text-lg px-8 py-6"
+              <Button
+                size="lg"
+                className="bg-neutral-900 hover:bg-neutral-800 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 text-lg px-8 py-6"
               >
                 <Link href="#get-started">
                   Get Started Free
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-white/20 text-white hover:bg-white/10 hover:border-white/30 backdrop-blur-sm text-lg px-8 py-6"
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-neutral-900/20 text-neutral-900 hover:bg-neutral-900/5 hover:border-neutral-900/30 backdrop-blur-sm text-lg px-8 py-6"
               >
                 <Link href="#demo">
                   Watch Demo

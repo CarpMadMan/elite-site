@@ -188,7 +188,7 @@ export function Navbar() {
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          setIsScrolled(window.scrollY > 0);
+          setIsScrolled(window.scrollY > 20);
           ticking = false;
         });
         ticking = true;
@@ -200,201 +200,206 @@ export function Navbar() {
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-        isScrolled
-          ? "bg-[#0a0a0a]/95 backdrop-blur-md shadow-sm border-b border-white/10"
-          : "bg-[#0a0a0a]/80 backdrop-blur-sm border-b border-transparent"
-      }`}
-    >
-      <div className="container flex h-16 items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex items-center space-x-2">
-          <span className="text-2xl font-bold tracking-tight text-white">ELITE</span>
-        </Link>
+    <header className="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
+      <nav
+        className={cn(
+          "mx-auto max-w-6xl rounded-full border transition-all duration-300",
+          isScrolled
+            ? "bg-white/90 backdrop-blur-md border-gray-200 shadow-sm"
+            : "bg-transparent border-white/20"
+        )}
+      >
+        <div className="flex h-14 items-center justify-between px-6">
+          {/* Logo */}
+          <Link href="/" className="flex items-center">
+            <span className="text-xl font-semibold tracking-tight text-neutral-900">
+              ELITE
+            </span>
+          </Link>
 
-        {/* Desktop Navigation */}
-        <NavigationMenu className="hidden md:flex">
-          <NavigationMenuList>
-            {/* Product Dropdown */}
-            <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-white/80 hover:text-white bg-transparent hover:bg-white/5 data-[state=open]:text-white data-[state=open]:bg-white/5">
-                Product
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
-                  {productItems.map((item) => (
-                    <li key={item.title}>
-                      <NavigationMenuLink asChild>
-                        <Link
-                          href={item.href}
-                          className={cn(
-                            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-white/5 hover:text-white focus:bg-white/5 focus:text-white",
-                            "text-white/70"
-                          )}
-                        >
-                          <div className="flex items-start gap-3">
-                            <item.icon className="h-5 w-5 mt-0.5 text-white/60" />
-                            <div className="flex-1">
-                              <div className="text-sm font-medium leading-none text-white">
-                                {item.title}
-                              </div>
-                              <p className="line-clamp-2 text-sm leading-snug text-white/60 mt-1">
-                                {item.description}
-                              </p>
-                            </div>
-                          </div>
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-
-            {/* Flow For Dropdown */}
-            <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-white/80 hover:text-white bg-transparent hover:bg-white/5 data-[state=open]:text-white data-[state=open]:bg-white/5">
-                ELITE FOR
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
-                  {flowForItems.map((item) => (
-                    <li key={item.title}>
-                      <NavigationMenuLink asChild>
-                        <Link
-                          href={item.href}
-                          className={cn(
-                            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-white/5 hover:text-white focus:bg-white/5 focus:text-white",
-                            "text-white/70 relative"
-                          )}
-                        >
-                          <div className="flex items-start gap-3">
-                            <item.icon className="h-5 w-5 mt-0.5 text-white/60" />
-                            <div className="flex-1">
-                              <div className="flex items-center gap-2">
-                                <div className="text-sm font-medium leading-none text-white">
+          {/* Desktop Navigation */}
+          <NavigationMenu className="hidden lg:flex">
+            <NavigationMenuList>
+              {/* Product Dropdown */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className={cn(
+                  "text-sm font-medium text-neutral-700 hover:text-neutral-900 bg-transparent hover:bg-neutral-100",
+                  "data-[state=open]:text-neutral-900 data-[state=open]:bg-neutral-100"
+                )}>
+                  Product
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
+                    {productItems.map((item) => (
+                      <li key={item.title}>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            href={item.href}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-neutral-100 hover:text-neutral-900 focus:bg-neutral-100 focus:text-neutral-900 text-neutral-700"
+                          >
+                            <div className="flex items-start gap-3">
+                              <item.icon className="h-5 w-5 mt-0.5 text-neutral-500" />
+                              <div className="flex-1">
+                                <div className="text-sm font-medium leading-none text-neutral-900">
                                   {item.title}
                                 </div>
-                                {item.badge && (
-                                  <span className="inline-flex items-center rounded-full bg-[#2A9D8F]/20 px-2 py-0.5 text-xs font-medium text-[#2A9D8F]">
-                                    {item.badge}
-                                  </span>
-                                )}
-                              </div>
-                              <p className="line-clamp-2 text-sm leading-snug text-white/60 mt-1">
-                                {item.description}
-                              </p>
-                            </div>
-                          </div>
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-
-            {/* Case Studies Dropdown */}
-            <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-white/80 hover:text-white bg-transparent hover:bg-white/5 data-[state=open]:text-white data-[state=open]:bg-white/5">
-                CASE STUDIES FOR
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
-                  {caseStudyItems.map((item) => (
-                    <li key={item.title}>
-                      <NavigationMenuLink asChild>
-                        <Link
-                          href={item.href}
-                          className={cn(
-                            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-white/5 hover:text-white focus:bg-white/5 focus:text-white",
-                            "text-white/70"
-                          )}
-                        >
-                          <div className="flex items-start gap-3">
-                            <item.icon className="h-5 w-5 mt-0.5 text-white/60" />
-                            <div className="flex-1">
-                              <div className="text-sm font-medium leading-none text-white">
-                                {item.title}
-                              </div>
-                              <p className="line-clamp-2 text-sm leading-snug text-white/60 mt-1">
-                                {item.description}
-                              </p>
-                            </div>
-                          </div>
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-
-            {/* Business Dropdown */}
-            <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-white/80 hover:text-white bg-transparent hover:bg-white/5 data-[state=open]:text-white data-[state=open]:bg-white/5">
-                Business
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
-                  {businessItems.map((item) => (
-                    <li key={item.title}>
-                      <NavigationMenuLink asChild>
-                        <Link
-                          href={item.href}
-                          className={cn(
-                            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-white/5 hover:text-white focus:bg-white/5 focus:text-white",
-                            "text-white/70"
-                          )}
-                        >
-                          <div className="flex items-start gap-3">
-                            {item.icon && <item.icon className="h-5 w-5 mt-0.5 text-white/60" />}
-                            <div className="flex-1">
-                              <div className="text-sm font-medium leading-none text-white">
-                                {item.title}
-                              </div>
-                              {item.description && (
-                                <p className="line-clamp-2 text-sm leading-snug text-white/60 mt-1">
+                                <p className="line-clamp-2 text-sm leading-snug text-neutral-600 mt-1">
                                   {item.description}
                                 </p>
-                              )}
+                              </div>
                             </div>
-                          </div>
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
 
-        {/* Desktop CTA Button */}
-        <div className="hidden md:flex items-center space-x-4">
-          <Button
-            asChild
-            size="default"
-            className="rounded-full bg-[#2A9D8F] hover:bg-[#238B7D] text-white px-6 font-medium shadow-[0_0_20px_-5px_rgba(42,157,143,0.4)] hover:shadow-[0_0_30px_-5px_rgba(42,157,143,0.5)] transition-all"
-          >
-            <Link href="#download">Download for free</Link>
-          </Button>
-        </div>
+              {/* Flow For Dropdown */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className={cn(
+                  "text-sm font-medium text-neutral-700 hover:text-neutral-900 bg-transparent hover:bg-neutral-100",
+                  "data-[state=open]:text-neutral-900 data-[state=open]:bg-neutral-100"
+                )}>
+                  ELITE FOR
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
+                    {flowForItems.map((item) => (
+                      <li key={item.title}>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            href={item.href}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-neutral-100 hover:text-neutral-900 focus:bg-neutral-100 focus:text-neutral-900 text-neutral-700 relative"
+                          >
+                            <div className="flex items-start gap-3">
+                              <item.icon className="h-5 w-5 mt-0.5 text-neutral-500" />
+                              <div className="flex-1">
+                                <div className="flex items-center gap-2">
+                                  <div className="text-sm font-medium leading-none text-neutral-900">
+                                    {item.title}
+                                  </div>
+                                  {item.badge && (
+                                    <span className="inline-flex items-center rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-medium text-emerald-700">
+                                      {item.badge}
+                                    </span>
+                                  )}
+                                </div>
+                                <p className="line-clamp-2 text-sm leading-snug text-neutral-600 mt-1">
+                                  {item.description}
+                                </p>
+                              </div>
+                            </div>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
 
-        {/* Mobile Menu */}
-        <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-          <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
-              <Menu className="h-5 w-5" />
-              <span className="sr-only">Toggle menu</span>
+              {/* Case Studies Dropdown */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className={cn(
+                  "text-sm font-medium text-neutral-700 hover:text-neutral-900 bg-transparent hover:bg-neutral-100",
+                  "data-[state=open]:text-neutral-900 data-[state=open]:bg-neutral-100"
+                )}>
+                  CASE STUDIES FOR
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
+                    {caseStudyItems.map((item) => (
+                      <li key={item.title}>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            href={item.href}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-neutral-100 hover:text-neutral-900 focus:bg-neutral-100 focus:text-neutral-900 text-neutral-700"
+                          >
+                            <div className="flex items-start gap-3">
+                              <item.icon className="h-5 w-5 mt-0.5 text-neutral-500" />
+                              <div className="flex-1">
+                                <div className="text-sm font-medium leading-none text-neutral-900">
+                                  {item.title}
+                                </div>
+                                <p className="line-clamp-2 text-sm leading-snug text-neutral-600 mt-1">
+                                  {item.description}
+                                </p>
+                              </div>
+                            </div>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              {/* Business Dropdown */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className={cn(
+                  "text-sm font-medium text-neutral-700 hover:text-neutral-900 bg-transparent hover:bg-neutral-100",
+                  "data-[state=open]:text-neutral-900 data-[state=open]:bg-neutral-100"
+                )}>
+                  Business
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
+                    {businessItems.map((item) => (
+                      <li key={item.title}>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            href={item.href}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-neutral-100 hover:text-neutral-900 focus:bg-neutral-100 focus:text-neutral-900 text-neutral-700"
+                          >
+                            <div className="flex items-start gap-3">
+                              {item.icon && <item.icon className="h-5 w-5 mt-0.5 text-neutral-500" />}
+                              <div className="flex-1">
+                                <div className="text-sm font-medium leading-none text-neutral-900">
+                                  {item.title}
+                                </div>
+                                {item.description && (
+                                  <p className="line-clamp-2 text-sm leading-snug text-neutral-600 mt-1">
+                                    {item.description}
+                                  </p>
+                                )}
+                              </div>
+                            </div>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+
+          {/* Desktop CTA Button */}
+          <div className="hidden lg:flex items-center">
+            <Button
+              asChild
+              size="sm"
+              className="rounded-full bg-neutral-900 hover:bg-neutral-800 text-white px-5 font-medium transition-all"
+            >
+              <Link href="#get-started">GET STARTED</Link>
             </Button>
-          </SheetTrigger>
-          <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-[#0a0a0a] border-white/10">
-            <MobileMenu onClose={() => setMobileMenuOpen(false)} />
-          </SheetContent>
-        </Sheet>
-      </div>
+          </div>
+
+          {/* Mobile Menu */}
+          <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+            <SheetTrigger asChild className="lg:hidden">
+              <Button variant="ghost" size="icon" className="text-neutral-700 hover:bg-neutral-100">
+                <Menu className="h-5 w-5" />
+                <span className="sr-only">Toggle menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-white border-neutral-200">
+              <MobileMenu onClose={() => setMobileMenuOpen(false)} />
+            </SheetContent>
+          </Sheet>
+        </div>
+      </nav>
     </header>
   );
 }
