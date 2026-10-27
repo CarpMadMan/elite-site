@@ -26,11 +26,14 @@ const useEmojiPositionTracker = ({
   const [emojiStates, setEmojiStates] = useState<EmojiState[]>([]);
   const rafRef = useRef<number>();
   const previousStatesRef = useRef<Map<string, boolean>>(new Map());
+  const initializedRef = useRef(false);
 
   useEffect(() => {
-    if (!glassZone || !containerRef.current) {
+    if (!glassZone || !containerRef.current || initializedRef.current) {
       return;
     }
+
+    initializedRef.current = true;
 
     const container = containerRef.current;
     const containerRect = container.getBoundingClientRect();
@@ -54,7 +57,6 @@ const useEmojiPositionTracker = ({
         return;
       }
 
-      const currentRect = containerRef.current.getBoundingClientRect();
       const emojiElements = containerRef.current.querySelectorAll('[data-emoji-track]');
 
       const newStates: EmojiState[] = Array.from(emojiElements).map((el, index) => {
@@ -92,8 +94,10 @@ const useEmojiPositionTracker = ({
       if (rafRef.current) {
         cancelAnimationFrame(rafRef.current);
       }
+      initializedRef.current = false;
     };
-  }, [emojis, containerRef, glassZone, direction]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [emojis, glassZone, direction]);
 
   return emojiStates;
 };

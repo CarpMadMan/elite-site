@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans antialiased bg-white`}>
+      <body className={`${inter.variable} font-sans antialiased bg-[#0a0a0a]`}>
         <Providers>
           <div className="flex min-h-screen flex-col">
             <Navbar />

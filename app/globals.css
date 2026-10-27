@@ -49,29 +49,29 @@
 :root {
   --radius: 0.5rem;
 
-  /* Wispr Flow Color Palette - Light Theme */
-  --background: 255 255 255;           /* #ffffff - pure white */
-  --foreground: 10 10 10;               /* #0a0a0a - near black */
-  --card: 250 250 250;                  /* #fafafa - light gray */
-  --card-foreground: 10 10 10;          /* #0a0a0a */
-  --popover: 255 255 255;
-  --popover-foreground: 10 10 10;
+  /* Wispr Flow Color Palette - Dark Theme */
+  --background: 10 10 10;               /* #0a0a0a - near black */
+  --foreground: 255 255 255;            /* #ffffff - pure white */
+  --card: 15 15 15;                     /* #0f0f0f - slightly lighter dark */
+  --card-foreground: 255 255 255;       /* #ffffff */
+  --popover: 15 15 15;                  /* #0f0f0f */
+  --popover-foreground: 255 255 255;    /* #ffffff */
 
   /* Wispr Flow Teal Accent */
   --primary: 0 128 128;                 /* #008080 - teal */
   --primary-foreground: 255 255 255;    /* #ffffff */
 
-  /* Neutral Grays */
-  --secondary: 245 245 245;             /* #f5f5f5 */
-  --secondary-foreground: 10 10 10;
-  --muted: 250 250 250;                 /* #fafafa */
-  --muted-foreground: 115 115 115;      /* #737373 */
+  /* Neutral Grays - Dark Theme */
+  --secondary: 25 25 25;                /* #191919 */
+  --secondary-foreground: 255 255 255;
+  --muted: 20 20 20;                    /* #141414 */
+  --muted-foreground: 163 163 163;     /* #a3a3a3 */
   --accent: 0 128 128;                  /* #008080 - teal */
   --accent-foreground: 255 255 255;
 
-  /* Borders */
-  --border: 229 229 229;                /* #e5e5e5 */
-  --input: 229 229 229;
+  /* Borders - Dark Theme */
+  --border: 40 40 40;                   /* #282828 */
+  --input: 40 40 40;
   --ring: 0 128 128;                    /* #008080 - teal */
 
   /* Destructive (keep red) */
@@ -84,14 +84,14 @@
   --chart-4: 0 175 175;
   --chart-5: 0 125 125;
 
-  /* Sidebar - light theme */
-  --sidebar: 250 250 250;
-  --sidebar-foreground: 10 10 10;
+  /* Sidebar - dark theme */
+  --sidebar: 15 15 15;                  /* #0f0f0f */
+  --sidebar-foreground: 255 255 255;
   --sidebar-primary: 0 128 128;
   --sidebar-primary-foreground: 255 255 255;
-  --sidebar-accent: 245 245 245;
-  --sidebar-accent-foreground: 10 10 10;
-  --sidebar-border: 229 229 229;
+  --sidebar-accent: 25 25 25;           /* #191919 */
+  --sidebar-accent-foreground: 255 255 255;
+  --sidebar-border: 40 40 40;           /* #282828 */
   --sidebar-ring: 0 128 128;
 }
 
